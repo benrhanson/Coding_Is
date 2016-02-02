@@ -5,7 +5,7 @@
 		body {
 			background-color:black;
 			font-family: monospace;
-			color:white;
+			color:orange;
 			font-size:50px;
 			text-align: center;
 			margin-top:20%;
@@ -25,16 +25,19 @@
 
 	<script>
 
-		var words = ["fun", "exciting", "about not giving up", "being helpful", "being open", "what I learned at CodingDojo!"],
+		var words = ["a species of songbird", "the official name of the Kingdom of Sweden in Portuguese", "a good source of calcium", "the Lord of the Dance", "coupe le fromage", "the log of 15"],
 			el = document.getElementById('magic'),
 			word_counter = 0,
 			character_counter = 0;
-
 		function updateText()
 		{
-			el.innerHTML = el.innerHTML+words[word_counter][character_counter++];
+			var letter = words[word_counter][character_counter++];	
+			if(letter == " "){
+				letter = "&nbsp";
+			}		
+			el.innerHTML = el.innerHTML + letter;
 
-			if(character_counter == words[word_counter].length)
+			if(character_counter == words[word_counter].length+1)
 			{
 				word_counter++; 	//choose a different word
 				character_counter = 0;	//start over with the first character of the word
